@@ -2,7 +2,9 @@ import asyncio
 import discord
 from discord.ext import commands
 
-client = commands.Bot(command_prefix = '_')
+intents = discord.Intents.default()
+intents.messages = True
+client = commands.Bot(command_prefix = '_', help_command=None, case_insensitive=True, intents=intents)
 
 @client.event
 async def on_ready():
@@ -21,5 +23,5 @@ def read_token():
 
 try:
     client.run(read_token())
-except Exception:
+except Exception as e:
     print("That token doesn't work!!!!")
