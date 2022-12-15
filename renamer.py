@@ -2,7 +2,7 @@ import asyncio
 import discord
 from discord.ext import commands
 
-intents = discord.Intents.default()
+intents = discord.Intents.all()
 intents.messages = True
 client = commands.Bot(command_prefix = '_', help_command=None, case_insensitive=True, intents=intents)
 
